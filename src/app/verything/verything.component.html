@@ -1,0 +1,24 @@
+
+<div class="card-container">
+  <div *ngFor="let article of ivNewsData">
+    <div class="article-card">
+      <img [src]="article.urlToImage" alt="{{ article.title }}">
+      <p class="card-text">{{ article.tittle }}</p>
+      <p class="card-text">{{ article.description }}</p>
+      <p class="card-text">{{ article.author }}</p>
+      <a [href]="article.url" target="_blank" class="btn btn-primary">Read More</a>
+    </div>
+  </div>
+</div>
+<div class="card-container">
+  <div *ngFor="let article of newsData">
+    <div class="article-card">
+      <img [src]="article.urlToImage" alt="{{ article.title }}">
+      <p class="card-text">{{ article.tittle }}</p>
+      <p class="card-text">{{ article.description }}</p>
+      <p class="card-text">{{ article.author }}</p>
+      <a [href]="article.url" target="_blank" class="btn btn-primary">Read More</a>
+    </div>
+  </div>
+</div>
+

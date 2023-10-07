@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NewsService } from './news.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'news-web';
+
+  query = '';
+  newsData: any[] = [];
+
+  constructor(private newsService: NewsService) {}
+
+  searchNews() {
+    if (this.query!== '') {
+      this.newsService.searchNews(this.query).subscribe((data: any) => {
+        this.newsData = data.articles;
+      });
+    }
+  }
 }
